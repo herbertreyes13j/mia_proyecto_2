@@ -1,0 +1,54 @@
+
+	<div class="container-contact100">
+            <div class="wrap-contact100">
+                <form class="contact100-form validate-form" onsubmit="return false">
+                
+                    <span class="contact100-form-title">
+                        Elija Ciencia
+                    </span>
+    
+                    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                        <span class="label-input100">Seleccione la Facultad</span>
+                        <select (change)="onChange($event.target.value)" class="input100" #facu required>
+                            <option value="" selected disabled hidden>Escoge Facultad</option>
+                            <option *ngFor="let facultad of facultades" value={{facultad.ID_FACULTAD}}>
+                                {{facultad.NOMBRE}}
+                            </option>
+                          </select>
+                    </div>
+
+                    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                            <span class="label-input100">Seleccione la Carrera</span>
+                            <select class="input100" #carre required>
+                                <option value="" selected disabled hidden>Escoge Carrera</option>
+                                <option *ngFor="let carrera of carreras" value={{carrera.ID_CARRERA}}>
+                                    {{carrera.NOMBRE}}
+                                </option>
+                              </select>
+                        </div>
+                 
+                    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                        <span class="label-input100">Ingrese el nombre de la Ciencia</span>
+                        <input class="input100" type="text" name="name" placeholder="Ingrese Ciencia" required #cien>
+                    </div>
+
+                    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                            <span class="label-input100">Ingrese descripcion de la Ciencia</span>
+                            <input class="input100" type="text" name="name" placeholder="Descripcion Ciencia" required #descr>
+                        </div>
+            
+    
+                    <div class="container-contact100-form-btn">
+                        <button class="contact100-form-btn" (click)="crearciencia(facu,carre,cien,descr)">
+                            <span>
+                                Crear Ciencia
+                                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+    
+    

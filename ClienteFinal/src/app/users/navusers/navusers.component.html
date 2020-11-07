@@ -1,0 +1,32 @@
+<div class="area"></div>
+<nav class="main-menu">
+    <ul>
+        <li>
+        <a >
+            
+                <i class="fa fa-address-card-o fa-2x" ></i>
+                <img src="{{imagen}}" width="120" height="120">
+          
+        </a>
+        </li>
+        <li *ngFor="let menuItem of menuItems">
+            <a href="{{menuItem.path}}">
+                <i class="{{menuItem.icon}}"></i>
+                <span class="nav-text">
+                    {{menuItem.title}}
+                </span>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="logout">
+        <li>
+           <a href="#" (click)="logout()">
+                 <i class="fa fa-power-off fa-2x"></i>
+                <span class="nav-text">
+                    Logout
+                </span>
+            </a>
+        </li>  
+    </ul>
+</nav>

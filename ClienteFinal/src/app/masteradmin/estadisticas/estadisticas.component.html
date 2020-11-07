@@ -1,0 +1,234 @@
+
+	<div class="container-contact100">
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form">
+                <span class="contact100-form-title">
+                 VER ESTADISTICAS
+                </span>
+
+   
+                
+               <div class="wrap-input100 validate-input bg1">
+                    <h3>Seleccionar Estadistica</h3>   
+                <p>
+                 
+               
+                    <label><input #est1 type="checkbox" name="size" (change)="0" >Catedratico mas Respuestas</label>
+                    <br>
+                    <label><input #est2 type="checkbox" name="size" (change)="0">Estudiantes mas Respuestas</label>
+                    <br>
+                    <label><input #est3 type="checkbox" name="size" (change)="0">Top 3 Ciencias</label>
+                    <br>
+                    <label><input #est4 type="checkbox" name="size" (change)="0">Top 5 Estudiantes</label>
+                    <br>
+                    <label><input #est5 type="checkbox" name="size" (change)="0">Top 5 Catedraticos</label>
+                    <br>
+                </p>
+                <br>
+                <div *ngIf="est1.checked">
+                    <h3>Top 3 Catedráticos que más respuestas han dado a un tema</h3>   
+                    <span class="label-input100">Elija Ciencia</span>
+                    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                        <span class="label-input100">Seleccione la Ciencia</span>
+                        <select class="input100" #cien required>
+                            <option value="" selected disabled hidden>Escoge Ciencia</option>
+                            <option *ngFor="let ciencia of ciencias" value={{ciencia.ID_CIENCIA}}>
+                                {{ciencia.NOMBRE}}
+                            </option>
+                          </select>
+                    </div>
+                 
+                    
+               
+                    <button class="contact100-form-btn" (click)="VerEst1(cien)" >
+                            <span>
+                                Ver Estadistica
+                                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                            </span>
+                        </button>
+
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Nombre</th>
+                                <th>Imagen</th>
+                                <th>Cantidad</th>
+                          
+                              </tr>
+                            </thead>
+                            <tbody>
+                    
+                                <tr *ngFor="let usuario of usuarios1">
+                                    <td>{{usuario.NOMBRE}}</td>
+                                    <td> <img src="{{usuario.FOTOGRAFIA}}" width="120" height="120"></td>
+                                    <td>{{usuario.CANTIDAD}}</td>         
+                                </tr>
+                            </tbody>
+                          </table>
+                </div>
+
+                <div *ngIf="est2.checked">
+                    <h3>Top 10 de Estudiantes que más respuestas han dado a un tema</h3>   
+                    <span class="label-input100">Elija Ciencia</span>
+                    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                        <span class="label-input100">Seleccione la Ciencia</span>
+                        <select class="input100" #cien required>
+                            <option value="" selected disabled hidden>Escoge Ciencia</option>
+                            <option *ngFor="let ciencia of ciencias" value={{ciencia.ID_CIENCIA}}>
+                                {{ciencia.NOMBRE}}
+                            </option>
+                          </select>
+                    </div>
+                 
+                    
+               
+                    <button class="contact100-form-btn" (click)="VerEst2(cien)" >
+                            <span>
+                                Ver Estadistica
+                                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                            </span>
+                        </button>
+
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Nombre</th>
+                                <th>Imagen</th>
+                                <th>Cantidad</th>
+                          
+                              </tr>
+                            </thead>
+                            <tbody>
+                    
+                                <tr *ngFor="let usuario of usuarios2">
+                                    <td>{{usuario.NOMBRE}}</td>
+                                    <td> <img src="{{usuario.FOTOGRAFIA}}" width="120" height="120"></td>
+                                    <td>{{usuario.CANTIDAD}}</td>         
+                                </tr>
+                            </tbody>
+                          </table>
+                </div>
+           
+                <div *ngIf="est3.checked">
+                    <h3>Top 3 de ciencias que más respuestas tengan en sus temas</h3>   
+                    <span class="label-input100">Elija Ciencia</span>
+          
+                    
+               
+                    <button class="contact100-form-btn" (click)="VerEst3()" >
+                            <span>
+                                Ver Estadistica
+                                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                            </span>
+                        </button>
+
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Ciencia</th>
+                                <th>Cantidad</th>
+                          
+                              </tr>
+                            </thead>
+                            <tbody>
+                    
+                                <tr *ngFor="let usuario of usuarios3">
+                                    <td>{{usuario.NOMBRE}}</td>
+                                    <td>{{usuario.CANTIDAD}}</td>         
+                                </tr>
+                            </tbody>
+                          </table>
+                </div>
+
+                <div *ngIf="est4.checked">
+                    <h3>Top 10 de Estudiantes que más respuestas han dado a un tema</h3>   
+                    <span class="label-input100">Elija Ciencia</span>
+                    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                        <span class="label-input100">Seleccione la Ciencia</span>
+                        <select class="input100" #cien required>
+                            <option value="" selected disabled hidden>Escoge Ciencia</option>
+                            <option value="0">GENERAL</option>
+                            <option *ngFor="let ciencia of ciencias" value={{ciencia.ID_CIENCIA}}>
+                                {{ciencia.NOMBRE}}
+                            </option>
+                          </select>
+                    </div>
+                 
+                    
+               
+                    <button class="contact100-form-btn" (click)="VerEst4(cien)" >
+                            <span>
+                                Ver Estadistica
+                                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                            </span>
+                        </button>
+
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                          
+                              </tr>
+                            </thead>
+                            <tbody>
+                    
+                                <tr *ngFor="let usuario of usuarios4">
+                                    <td>{{usuario.NOMBRE}}</td>
+                                    <td>{{usuario.CANTIDAD}}</td>         
+                                </tr>
+                            </tbody>
+                          </table>
+                </div>
+                <div *ngIf="est5.checked">
+                    <h3>Top 10 de Estudiantes que más respuestas han dado a un tema</h3>   
+                    <span class="label-input100">Elija Ciencia</span>
+                    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                        <span class="label-input100">Seleccione la Ciencia</span>
+                        <select class="input100" #cien required>
+                            <option value="" selected disabled hidden>Escoge Ciencia</option>
+                            <option value="0">GENERAL</option>
+                            <option *ngFor="let ciencia of ciencias" value={{ciencia.ID_CIENCIA}}>
+                                {{ciencia.NOMBRE}}
+                            </option>
+                          </select>
+                    </div>
+                 
+                    
+               
+                    <button class="contact100-form-btn" (click)="VerEst5(cien)" >
+                            <span>
+                                Ver Estadistica
+                                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                            </span>
+                        </button>
+
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                          
+                              </tr>
+                            </thead>
+                            <tbody>
+                    
+                                <tr *ngFor="let usuario of usuarios5">
+                                    <td>{{usuario.NOMBRE}}</td>
+                                    <td>{{usuario.CANTIDAD}}</td>         
+                                </tr>
+                            </tbody>
+                          </table>
+                </div>
+           
+           
+ 
+               </div>
+       
+            </form>
+        </div>
+    </div>
+
+
+
+

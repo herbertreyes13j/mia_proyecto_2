@@ -1,0 +1,53 @@
+
+	<div class="container-contact100">
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form" onsubmit="return false">
+                <span class="contact100-form-title">
+                   {{Titulo}}
+                </span>
+
+   
+                <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+                        <span class="label-input100">Descripcion</span>
+                        <textarea disabled class="input100" name="message" value="{{Descripcion}}"  #des></textarea>
+                    </div>
+
+                    <span class="contact100-form-title">
+                        Agregar Comentario
+                     </span>
+                     <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+                        <span class="label-input100">Nuevo Comentario</span>
+                        <textarea class="input100" name="message" placeholder="Escriba su comentario..." #des2></textarea>
+                    </div>
+
+                <div class="container-contact100-form-btn" >
+                    <button class="contact100-form-btn" (click)="Comentar(des2)">
+                        <span>
+                            Comentar
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+
+                
+            </form>
+            
+        </div>
+        
+        <section class="comments">
+    <article class="comment" *ngFor="let respuesta of Respuestas">
+            <a class="comment-img" >
+                    <img src="{{respuesta.FOTOGRAFIA}}" alt="" width="50" height="50" />
+            </a>
+            <div class="comment-body">
+                    <div class="text">
+                      <p>{{respuesta.RESPUESTA}}</p>
+                    </div>
+                    <p class="attribution">by <a >{{respuesta.NOMBRE}}</a> at {{respuesta.FECHA}}</p>
+                  </div>
+    </article>
+
+
+  </section>
+    </div>
+

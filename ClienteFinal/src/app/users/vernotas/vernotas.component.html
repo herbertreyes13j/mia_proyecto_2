@@ -1,0 +1,55 @@
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" onsubmit="return false">
+            
+                <span class="contact100-form-title">
+					Elija Room
+				</span>
+
+				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                    <span class="label-input100">Seleccione el Room</span>
+                    <select class="input100" #sal required>
+                        <option value="" selected disabled hidden>Escoge Room</option>
+                        <option *ngFor="let room of rooms" value={{room.NOMBRE}}>
+                            {{room.NOMBRE}}
+                        </option>
+                      </select>
+				</div>
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" (click)="obtenernotas(sal)">
+						<span>
+							Obtener Notas
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+    </div>
+    
+    <span class="contact100-form-title">
+        Listado Notas
+    </span>
+<table>
+        <thead>
+          <tr>
+            <th>Carnet</th>
+            <th>Nombre</th>
+            <th>Nota</th>
+            <th>Sala</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let nota of notas">
+                <td>{{nota.CARNET}}</td>
+                <td>{{nota.NOMBRE}}</td>
+                <td>{{nota.NOTA}}</td>
+                <td>{{nota.SALA}}</td>
+         
+            </tr>
+        </tbody>
+      </table>
+
+

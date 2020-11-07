@@ -1,0 +1,14 @@
+<section id="un-chat" >
+        <ul id="container" >
+          <div *ngFor="let mensaje of mensajes">
+              
+              <li *ngIf="mensaje.EMISOR==idemisor" class="me" ><div>{{mensaje.MENSAJE}}</div></li>
+              <li *ngIf="mensaje.EMISOR!=idemisor"><div>{{mensaje.MENSAJE}}</div></li>
+          </div>
+          
+          
+        </ul>
+    
+        <input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
+<button (click)="sendMessage()">Send</button>
+      </section>

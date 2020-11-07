@@ -1,0 +1,22 @@
+<span class="contact100-form-title">
+        Listado Ciencias
+    </span>
+<table>
+        <thead>
+          <tr>
+            <th>Ciencia</th>
+            <th>Descripcion</th>
+            <th>Carrera</th>
+            <th>Facultad</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let ciencia of ciencias">
+                <td>{{ciencia.CIENCIA}}</td>
+                <td>{{ciencia.DESCRIPCION}}</td>
+                <td>{{ciencia.CARRERA}}</td>
+                <td>{{ciencia.FACULTAD}}</td>
+            </tr>
+        </tbody>
+      </table>

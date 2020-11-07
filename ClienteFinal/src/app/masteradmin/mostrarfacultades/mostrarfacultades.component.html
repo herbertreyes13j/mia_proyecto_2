@@ -1,0 +1,16 @@
+<span class="contact100-form-title">
+        Listado Facultades
+    </span>
+<table>
+        <thead>
+          <tr>
+            <th>Facultad</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let facultad of facultades">
+                <td>{{facultad.NOMBRE}}</td>
+            </tr>
+        </tbody>
+      </table>

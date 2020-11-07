@@ -1,0 +1,16 @@
+
+  <div class="grid-container">
+    <div *ngFor="let usuario of usuarios">
+  <div class="card-group">
+  
+      <div class="card" >
+        <div class="card-badge"></div>
+        <div class="card-image"></div>
+        <h1 class="card-title">{{usuario.NOMBRE}}</h1>
+        <a (click)="iniciarchat(usuario.ID_USUARIO)">Chatear</a>
+  
+      </div>
+    </div>
+    </div>
+   </div>
+

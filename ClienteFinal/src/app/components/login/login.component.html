@@ -1,0 +1,45 @@
+<ngx-alerts></ngx-alerts>
+<div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <div class="login100-pic js-tilt" data-tilt>
+          <img src="../../../assets/Images/Proyecto/LogoCU.png" alt="IMG">
+        </div>
+  
+        <form class="login100-form validate-form">
+          <span class="login100-form-title">
+            Inicie Sesion
+          </span>
+  
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+            <input class="input100" type="text" name="email" placeholder="Email" #mail required>
+   
+          </div>
+  
+          <div class="wrap-input100 validate-input" data-validate = "Password is required">
+            <input class="input100" type="password" name="pass" placeholder="Password" #pass required>
+
+          </div>
+
+          <div class="wrap-input100 validate-input">
+              <select class="input100" #rols required>
+                <option value="" selected disabled hidden>Escoge Usuario</option>
+                <option *ngFor="let rol of roles" value={{rol.ID_ROL}}>
+                    {{rol.ROL}}
+                </option>
+              </select>
+          </div>
+          
+          <div class="container-login100-form-btn">
+            <button type="submit" class="login100-form-btn" (click)="IniciarSesion(mail,pass,rols)">
+              Iniciar Sesion
+            </button>
+          </div>
+  
+
+  
+
+        </form>
+      </div>
+    </div>
+  </div>

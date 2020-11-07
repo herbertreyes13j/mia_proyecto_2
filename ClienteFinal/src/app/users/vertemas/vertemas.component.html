@@ -1,0 +1,17 @@
+
+  <div class="grid-container">
+  <div *ngFor="let tema of temas">
+<div class="card-group">
+
+    <div class="card" >
+      <div class="card-badge"></div>
+      <div class="card-image"></div>
+      <h1 class="card-title">{{tema.TITULO}}</h1>
+      <h3>{{tema.NOMBRE}}</h3>
+      <p>{{tema.DESCRIPCION}}</p>
+      <a (click)="iralapagina(tema.ID_TEMA,tema.ID_USUARIO)">More Info</a>
+
+    </div>
+  </div>
+  </div>
+ </div>
